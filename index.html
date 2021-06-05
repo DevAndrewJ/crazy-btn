@@ -28,10 +28,14 @@
 
         moveBtn = () => {
             
-            const offsetLeft = Math.random();
-            const offsetTop = Math.random();
+            const offsetLeft = Math.random() * window.innerWidth;
+            const offsetTop = Math.random() * window.innerHeight;
+
+            crazyBtn.style.top = offsetTop + 'px';
+            crazyBtn.style.left = offsetLeft + 'px';
             
-            console.log("Hey THERE", offsetLeft,offsetTop);
+            
+            console.log("Hey THERE" + offsetLeft,offsetTop);
             
         }
 
