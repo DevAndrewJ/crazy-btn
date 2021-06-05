@@ -19,28 +19,36 @@
     <title>Crazy Buttons</title>
 </head>
 <body>
+
+
     <button  type ="button"class="btn btn-lg btn-danger btn-crazy "> Click me!</button>
+    <button  type ="button"class="btn btn-lg btn-success btn-crazy "> Click me!</button>
+    <button  type ="button"class="btn btn-lg btn-info btn-crazy "> Click me!</button>
+    <button  type ="button"class="btn btn-lg btn-primary btn-crazy "> Click me!</button>
 
 
     <script>
 
-        const crazyBtn = document.querySelector('.btn-crazy');
+        const crazyBtns = document.querySelectorAll('.btn-crazy');
+        
+        moveBtn = (e) => {   
+            const button = e.target; 
 
-        moveBtn = () => {
-            
-            const offsetLeft = Math.random() * window.innerWidth;
-            const offsetTop = Math.random() * window.innerHeight;
+            const offsetLeft = Math.random() * (window.innerWidth - button.clientWidth);
+            const offsetTop = Math.random() * (window.innerHeight - button.clientHeight);  
 
-            crazyBtn.style.top = offsetTop + 'px';
-            crazyBtn.style.left = offsetLeft + 'px';
-            
+            button.style.top = offsetTop + 'px';
+            button.style.left = offsetLeft + 'px';
+
             
             console.log("Hey THERE" + offsetLeft,offsetTop);
             
         }
 
+        
 
-        crazyBtn.addEventListener('mouseenter', moveBtn);
+
+        crazyBtns.forEach(button => button.addEventListener('mouseenter', moveBtn));
 
     </script>
 </body>
